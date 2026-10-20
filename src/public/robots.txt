@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+Disallow: /404
+
+User-agent: Googlebot
+Allow: /
+Disallow: /404
+
+User-agent: Bingbot
+Allow: /
+Disallow: /404
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /404
+
+User-agent: yisouspider
+Allow: /
+Disallow: /404
+
+# Sitemaps
+Sitemap: https://jichangrumen.world/sitemap.xml

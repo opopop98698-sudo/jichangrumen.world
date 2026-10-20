@@ -1,0 +1,324 @@
+/* ==========================================================================
+   jichangrumen.world - 现代专业教育控制台视觉规范 (Modern Pro Education Theme)
+   ========================================================================== */
+
+:root {
+  /* Brand color tokens: 科技湛蓝 + 活力翠绿 */
+  --vp-c-brand-1: #2563eb;
+  --vp-c-brand-2: #1d4ed8;
+  --vp-c-brand-3: #1e40af;
+  --vp-c-brand-soft: rgba(37, 99, 235, 0.12);
+  --vp-c-accent-emerald: #10b981;
+  --vp-c-accent-amber: #f59e0b;
+  --vp-c-accent-rose: #ef4444;
+
+  /* Typography tokens: 舒适呼吸型 */
+  --vp-font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  --vp-font-family-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Content width & spacing */
+  --vp-layout-max-width: 1440px;
+}
+
+.dark {
+  --vp-c-brand-1: #3b82f6;
+  --vp-c-brand-2: #60a5fa;
+  --vp-c-brand-3: #93c5fd;
+  --vp-c-brand-soft: rgba(59, 130, 246, 0.18);
+  --vp-c-accent-emerald: #34d399;
+  --vp-c-accent-amber: #fbbf24;
+}
+
+/* ==========================================================================
+   全局排版与文字视读节奏 (Typography Rhythm)
+   ========================================================================== */
+
+body {
+  font-family: var(--vp-font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 正文段落：16px / 1.8 行高，留白舒适 */
+.vp-doc p {
+  font-size: 1.02rem;
+  line-height: 1.82;
+  margin: 1.25rem 0;
+  color: var(--vp-c-text-1);
+  letter-spacing: 0.01em;
+}
+
+.vp-doc ul, .vp-doc ol {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  margin: 1.1rem 0;
+  padding-left: 1.5rem;
+}
+
+.vp-doc li {
+  margin: 0.4rem 0;
+}
+
+/* 标题层级设计 */
+.vp-doc h1 {
+  font-size: 2.35rem;
+  font-weight: 850;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h2 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  margin-top: 3.2rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--vp-c-divider);
+  display: flex;
+  align-items: center;
+}
+
+.vp-doc h2::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 1.4rem;
+  background: linear-gradient(180deg, var(--vp-c-brand-1), #10b981);
+  border-radius: 9999px;
+  margin-right: 0.75rem;
+}
+
+.vp-doc h3 {
+  font-size: 1.32rem;
+  font-weight: 750;
+  margin-top: 2.2rem;
+  margin-bottom: 0.9rem;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ==========================================================================
+   特色内容容器 (Answer-First Lead, Metaphor Box, Alerts)
+   ========================================================================== */
+
+/* Answer-First 核心先导卡片 */
+.answer-first-lead {
+  font-size: 1.08rem;
+  line-height: 1.85;
+  padding: 1.35rem 1.65rem;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%);
+  border-left: 5px solid var(--vp-c-brand-1);
+  border-radius: 0 12px 12px 0;
+  margin: 1.75rem 0 2.25rem;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.04);
+}
+
+.answer-first-lead strong {
+  color: var(--vp-c-brand-1);
+  font-weight: 750;
+}
+
+/* 生活化比喻说明框 */
+.metaphor-box {
+  background: rgba(245, 158, 11, 0.07);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: 10px;
+  padding: 1.15rem 1.4rem;
+  margin: 1.75rem 0;
+  position: relative;
+}
+
+.metaphor-title {
+  font-weight: 800;
+  font-size: 1.02rem;
+  color: #b45309;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.5rem;
+}
+
+.dark .metaphor-title {
+  color: #f59e0b;
+}
+
+/* ==========================================================================
+   Markdown 表格现代化与防挤压自适应规范 (Anti-Crush Table Architecture)
+   ========================================================================== */
+
+.vp-doc table {
+  display: block !important;
+  width: 100% !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(150, 150, 150, 0.4) transparent !important;
+  border-collapse: collapse !important;
+  margin: 1.75rem 0 !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03) !important;
+  background: var(--vp-c-bg-soft) !important;
+}
+
+.vp-doc thead {
+  background: var(--vp-c-bg-mute) !important;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-mute) !important;
+  color: var(--vp-c-text-1) !important;
+  font-weight: 800 !important;
+  font-size: 0.92rem !important;
+  padding: 0.9rem 1.25rem !important;
+  border-bottom: 2px solid var(--vp-c-divider) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+  text-align: left !important;
+  white-space: nowrap !important; /* 表头绝对单行不折叠 */
+  letter-spacing: 0.02em !important;
+}
+
+.vp-doc th:last-child {
+  border-right: none !important;
+}
+
+.vp-doc td {
+  padding: 0.9rem 1.25rem !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+  border-right: 1px solid var(--vp-c-divider) !important;
+  font-size: 0.93rem !important;
+  line-height: 1.6 !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important; /* 核心：严禁任意中文字符断行折叠成单字竖列！ */
+  word-break: keep-all !important;
+}
+
+.vp-doc td:last-child {
+  border-right: none !important;
+  white-space: normal !important; /* 仅最后一列（通常为标签/长评价）允许适度换行 */
+  min-width: 240px !important;
+  max-width: 450px !important;
+}
+
+/* 第一列梯队/排名、第二列品牌高亮醒目 */
+.vp-doc td:first-child {
+  font-weight: 750 !important;
+  color: var(--vp-c-text-1) !important;
+  background: var(--vp-c-bg-soft) !important;
+}
+
+.vp-doc td:nth-child(2) {
+  font-weight: 700 !important;
+}
+
+.vp-doc tr:last-child td {
+  border-bottom: none !important;
+}
+
+.vp-doc tr:nth-child(even) td {
+  background: rgba(125, 125, 125, 0.015);
+}
+
+.vp-doc tr:hover td {
+  background: var(--vp-c-bg-mute) !important;
+}
+
+/* 现代化精致滚动条 */
+.vp-doc table::-webkit-scrollbar {
+  height: 8px;
+}
+.vp-doc table::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
+}
+.vp-doc table::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.4);
+  border-radius: 4px;
+}
+.vp-doc table::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-1);
+}
+
+/* Code block & inline code polish */
+.vp-doc :not(pre) > code {
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.88em;
+  padding: 0.2em 0.45em;
+  border-radius: 6px;
+  background: var(--vp-c-bg-mute);
+  border: 1px solid var(--vp-c-divider);
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
+
+/* Details / FAQ 折叠面板美化 */
+.vp-doc details {
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  padding: 0.9rem 1.25rem;
+  margin: 1.1rem 0;
+  background: var(--vp-c-bg-soft);
+  transition: all 0.25s ease;
+}
+
+.vp-doc details[open] {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.05);
+}
+
+.vp-doc summary {
+  font-weight: 700;
+  font-size: 1.02rem;
+  cursor: pointer;
+  outline: none;
+  color: var(--vp-c-text-1);
+  padding: 0.2rem 0;
+  user-select: none;
+}
+
+.vp-doc summary:hover {
+  color: var(--vp-c-brand-1);
+}
+
+/* Custom scrollbar for wide tables */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(150, 150, 150, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(150, 150, 150, 0.5);
+}
+
+/* Avatar & Logo styling */
+.VPNavBarTitle .logo {
+  border-radius: 50% !important;
+  border: 1.5px solid var(--vp-c-brand-1) !important;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.VPHero .image-src {
+  border-radius: 50% !important;
+  box-shadow: 0 12px 36px rgba(37, 99, 235, 0.2) !important;
+  border: 4px solid var(--vp-c-brand-soft) !important;
+  max-width: 240px !important;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
